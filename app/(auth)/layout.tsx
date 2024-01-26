@@ -1,4 +1,4 @@
-import { Logo } from "./_components/logo"
+import { Logo } from "./_components/logo";
 
 const layout = ({ children }: {
     children: React.ReactNode
@@ -8,7 +8,7 @@ const layout = ({ children }: {
       <Logo />
         {children}
     </div>
-  )
-}
+  );
+};
 
-export default layout
+export default layout;
