@@ -12,5 +12,5 @@ export const LiveBadge = ({ className }: Props) => {
     )}>
       Live
     </div>
-  )
-}
+  );
+};

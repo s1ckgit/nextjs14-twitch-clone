@@ -1,5 +1,5 @@
 import { getSelf } from "@/lib/auth-service";
-import { getStreamByUserId } from "@/lib/steam-service";
+import { getStreamByUserId } from "@/lib/stream-service";
 import ToggleCard from "./_components/toggle-card";
 
 const Chat = async () => {

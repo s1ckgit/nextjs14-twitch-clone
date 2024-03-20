@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 const font = Poppins({
     subsets: ['latin'],
     weight: ['200', '300', '400', '500', '600', '700', '800'],
-})
+});
 
 export const Logo = () => {
     return (
@@ -23,5 +23,5 @@ export const Logo = () => {
                 </p>
             </div>
         </div>
-    )
-}
+    );
+};

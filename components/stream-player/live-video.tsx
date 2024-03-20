@@ -1,10 +1,11 @@
 'use client';
 
 import { Participant, Track } from "livekit-client";
+import { useEventListener } from "usehooks-ts";
 import { useRef, useState, useEffect } from "react";
 import { useTracks } from '@livekit/components-react';
+
 import FullscreenControl from "./fullscreen-control";
-import { useEventListener } from "usehooks-ts";
 import VolumeControl from "./volume-control";
 
 interface LiveVideoProps {
@@ -21,10 +22,10 @@ const LiveVideo = ({
   const [volume, setVolume] = useState(0);
 
   const onVolumeChange = (value: number) => {
-    setVolume(+value);
+    setVolume(value);
     if (videoRef?.current) {
       videoRef.current.muted = value === 0;
-      videoRef.current.volume = +value * 0.01;
+      videoRef.current.volume = value * 0.01;
     }
   };
 
