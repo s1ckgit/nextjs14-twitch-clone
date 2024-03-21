@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Fullstack Twitch Clone: Next.js 14, Livestreaming, React, Prisma, Stripe, Tailwind, MySQL
 
-## Getting Started
+Репозиторий для Fullstack клона Twitch на Next.js 14
 
-First, run the development server:
+**Ключевые особенности:**
+- 📡 Трансляции с помощью RTMP / WHIP протоколов
+- 🔗 Подключение Next.js приложения к OBS или любому другому приложению для стримов
+- 🔐 Аутентификация (Google, Github)
+- 📸 Загрузка превью для стримов
+- 👀 Счётчик зрителей прямого эфира
+- 🚦 Отображение статуса стрма (Live/Offline)
+- 💬 Чат в реальном времени с использованием сокетов
+- 🎨 Генерация уникального цвета никнейма для каждого зрителя в чате
+- 👥 Система подписок
+- 🚫 Система банов
+- 👢 Возможность кикать зрителей со стрима в реальном времени
+- 🎛️ Панель для стримера (Настройка чата, стрима, ключи для подключения к софту, список забаненных зрителей)
+- 🐢 Слоумод для чата
+- 🔒 Мод чата только для подписчиков
+- 📴 Возможность отключать/включать чат
+- 🔽 Настраиваемый лэйаут (возможность прятать сайдбар, переключение чата, полноэкранный режим и т.д.)
+- 📚 Сайдбар с подписками и рекомендациями
+- 🏠 Домашняя страница с рекомендованными стримамы, отсортированными в порядке от Live до Offline (По дате запуска стрима)
+- 🔍 Страница с поиском стримов по имени пользователя и названию стрима
+- 🔄 Синхронизация информации о пользователе с базой данный с использованием вебхуков
+- 📡 Синхронизация Live статуса стрима с базой данный с использованием вебхуков
+- 📄 SSR (Server-Side Rendering)
+- 🗃️ MySQL
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Минимальные требования для запуска
+
+**Версия Node 18.17 или позднее**
+
+### Инструкция для запуска в dev режиме
+
+#### Скопировать репозиторий
+
+```shell
+git clone https://github.com/s1ckgit/nextjs14-twitch-clone.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Установить зависимости
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```shell
+npm i
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+#### Настроить .env файл
 
-## Learn More
+```js
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
+CLERK_WEBHOOK_SECRET=
 
-To learn more about Next.js, take a look at the following resources:
+DATABASE_URL=
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+LIVEKIT_API_URL=
+LIVEKIT_API_KEY=
+LIVEKIT_API_SECRET=
+NEXT_PUBLIC_LIVEKIT_WS_URL=
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+UPLOADTHING_SECRET=
+UPLOADTHING_APP_ID=
+```
 
-## Deploy on Vercel
+#### Настроить призму (Prisma)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Добавить MySQL базу данных (Я использовал локальную)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```shell
+npx prisma generate
+npx prisma db push
+
+```
+#### Запустить приложение
+
+```shell
+npm run dev
+```
+
+## Доступные команда
+
+Запускайте команда, используя npm `npm run [команда]`
+
+| команда         | команда                                  |
+| :-------------- | :--------------------------------------- |
+| `dev`           | Запускает приложение в режиме разработки |
+| `lint`          | Запускает линтер eslint                  |
+| `build`         | Собирает бандл приложения                |
+| `start`         | Запускает собранный бандл                |
